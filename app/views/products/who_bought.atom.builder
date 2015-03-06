@@ -1,7 +1,7 @@
 atom_feed do |feed|
 feed.title "Who bought #{@product.title}"
 
-latest_order = @product.orders.sort_by(&:updates_at).last
+latest_order = @product.orders.sort_by(&:updated_at).last
 feed.updated( latest_order && latest_order.updated_at )
 
 @product.orders.each do |order|
